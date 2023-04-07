@@ -7,6 +7,18 @@ export const filterData = [{ name: "Fast food", image: require('../assets/fastfo
 { name: "Sea food", image: require("../assets/seafood.jpg"), id: "6" },
 ];
 
+export const filterData2 = [{name:"Fast food",image:'https://www.eatthis.com/wp-content/uploads/sites/4/2021/01/fast-food.jpg?quality=82&strip=1' , id:"0"},
+{name:"Burgers",image: 'https://www.taysteesburger.com/images/banner-bg.jpg',id:"1"},
+{name:"Salads",image:"https://cdn.pixabay.com/photo/2016/05/12/00/07/appetizer-1386743__340.jpg",id:"2"},
+{name:"Hotdog",image: "https://media.istockphoto.com/id/484992224/photo/homemade-bacon-wrapped-hot-dogs.jpg?s=612x612&w=0&k=20&c=dRBgVfXudwvAbmMR1xTbTpqLgicSlAe5Y2Zjw49Tweo=",id:"3"},
+{name:"Chinese",image:"https://www.healthdigest.com/img/gallery/unhealthy-chinese-restaurant-foods-you-should-always-avoid/intro-1667991848.jpg",id:"4"},
+{name:"Mexican",image:"https://media.istockphoto.com/id/1213818930/photo/traditional-mexican-food.jpg?s=612x612&w=0&k=20&c=oWZyaXOiPkwUF8ehSDYZvdDCcJNkdxz2qXNFeQg111A=",id:"5"},  
+{name:"Sea food",image:"https://img.freepik.com/premium-photo/thai-grilled-seafood-prawn-shrimp-cockle_282791-681.jpg",id:"6"},
+{name:"Chinese Food",image:"https://www.healthdigest.com/img/gallery/unhealthy-chinese-restaurant-foods-you-should-always-avoid/intro-1667991848.jpg",id:"7"},
+{name:"Mexican pie",image:"https://media.istockphoto.com/id/1213818930/photo/traditional-mexican-food.jpg?s=612x612&w=0&k=20&c=oWZyaXOiPkwUF8ehSDYZvdDCcJNkdxz2qXNFeQg111A=",id:"8"},  
+{name:"Soups",image:"https://static01.nyt.com/images/2021/01/05/dining/as-tomato-and-white-bean-soup/merlin_165769566_b440a93d-e2a2-423e-9fb7-4257c2e2c1cd-superJumbo.jpg",id:"9"},
+];
+
 export const restaurantsData = [
     {
         restaurantName: "Mc Donalds", farAway: "21.2",

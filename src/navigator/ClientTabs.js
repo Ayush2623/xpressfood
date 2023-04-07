@@ -42,6 +42,7 @@ export default function RootClientTabs() {
                 component={SearchScreen}
                 options={
                     {
+                        headerShown:false,
                         tabBarLabel: "Search",
                         tabBarIcon: ({ color, size }) => (
                             <Icon
@@ -62,6 +63,7 @@ export default function RootClientTabs() {
                 component={MyOrderScreen}
                 options={
                     {
+                        headerShown:false,
                         tabBarLabel: "My Orders",
                         tabBarIcon: ({ color, size }) => (
                             <Icon
@@ -82,6 +84,7 @@ export default function RootClientTabs() {
                 component={MyAccountScreen}
                 options={
                     {
+                        headerShown:false,
                         tabBarLabel: "My Account",
                         tabBarIcon: ({ color, size }) => (
                             <Icon
