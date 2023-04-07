@@ -40,7 +40,7 @@ export default function SignInWelcomeScreen({navigation}) {
                     <View style={styles.slide}>
                         <Image
                             source={{ uri: "https://images.unsplash.com/photo-1481931098730-318b6f776db0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fGZvb2R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60" }}
-                            style={{ height: "100%", width: "100%" }}
+                            style={{ height: "100%", width: "auto" }}
                         />
                     </View>
 
@@ -83,7 +83,7 @@ export default function SignInWelcomeScreen({navigation}) {
 const styles = StyleSheet.create({
 
     slide: {
-        height: 250,
+        height: 'auto',
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#9DD6EB'

@@ -1,17 +1,18 @@
 import React from 'react'
 
-import { View, Text, StyleSheet, FlatList, TouchableWithoutFeedback, ImageBackgroundComponent ,ImageBackground,Dimensions} from 'react-native'
+import { View, Text, StyleSheet, FlatList, TouchableWithoutFeedback, ImageBackgroundComponent, ImageBackground, Dimensions } from 'react-native'
 import SearchComponent from '../components/SearchComponent'
 import { filterData2 } from '../global/data'
 import { colors } from '../global/styles'
 
 
+
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
-export default function SearchScreen() {
+export default function SearchScreen({ navigation }) {
 
     return (
-        <View style={{flex:1, marginBottom:20}}>
+        <View style={{ flex: 1, marginBottom: 20 }}>
             <SearchComponent />
 
             <View>
@@ -20,15 +21,17 @@ export default function SearchScreen() {
                     data={filterData2}
                     keyExtractor={item => item.id}
                     renderItem={({ item }) => (
-                        <TouchableWithoutFeedback>
-                            <View style = {styles.imageView}>
+                        <TouchableWithoutFeedback
+                            onPress={() => { navigation.navigate('SearchResultScreen', { item: item.name }) }}
+                        >
+                            <View style={styles.imageView}>
                                 <ImageBackground
-                                    style = {styles.image}
-                                    source = {{uri : item.image}}
+                                    style={styles.image}
+                                    source={{ uri: item.image }}
                                 >
 
-                                    <View style = {styles.textView}>
-                                        <Text style = {{color:colors.cardbackground, fontWeight:'bold'}}>{item.name}</Text>
+                                    <View style={styles.textView}>
+                                        <Text style={{ color: colors.cardbackground, fontWeight: 'bold' }}>{item.name}</Text>
                                     </View>
 
                                 </ImageBackground>
@@ -38,8 +41,8 @@ export default function SearchScreen() {
                     horizontal={false}
                     showsVerticalScrollIndicator={false}
                     numColumns={2}
-                    ListHeaderComponent={<Text style = {styles.listHeader}>Top Categories</Text>}
-                    ListFooterComponent={<Footer/>}
+                    ListHeaderComponent={<Text style={styles.listHeader}>Top Categories</Text>}
+                    ListFooterComponent={<Footer navigation={navigation} />}
                 />
             </View>
         </View>
@@ -47,24 +50,26 @@ export default function SearchScreen() {
 }
 
 
-const Footer = ()=>{
-    return(
-        <View style = {{marginTop:10,marginBottom:30}}>
+const Footer = ({ navigation }) => {
+    return (
+        <View style={{ marginTop: 10, marginBottom: 30 }}>
             <View >
                 <FlatList
                     style={{ marginBottom: 10 }}
                     data={filterData2}
                     keyExtractor={item => item.id}
                     renderItem={({ item }) => (
-                        <TouchableWithoutFeedback>
-                            <View style = {styles.imageView}>
+                        <TouchableWithoutFeedback
+                            onPress={() => { navigation.navigate('SearchResultScreen', { item: item.name }) }}
+                        >
+                            <View style={styles.imageView}>
                                 <ImageBackground
-                                    style = {styles.image}
-                                    source = {{uri : item.image}}
+                                    style={styles.image}
+                                    source={{ uri: item.image }}
                                 >
 
-                                    <View style = {styles.textView}>
-                                        <Text style = {{color:colors.cardbackground, fontWeight:'bold'}}>{item.name}</Text>
+                                    <View style={styles.textView}>
+                                        <Text style={{ color: colors.cardbackground, fontWeight: 'bold' }}>{item.name}</Text>
                                     </View>
 
                                 </ImageBackground>
@@ -74,11 +79,11 @@ const Footer = ()=>{
                     horizontal={false}
                     showsVerticalScrollIndicator={false}
                     numColumns={2}
-                    ListHeaderComponent={<Text style = {styles.listHeader}>More Categories</Text>}
-                    
+                    ListHeaderComponent={<Text style={styles.listHeader}>More Categories</Text>}
+
                 />
-                </View>
-            </View> 
+            </View>
+        </View>
     )
 }
 
@@ -105,8 +110,8 @@ const styles = StyleSheet.create({
         color: colors.grey2,
         paddingBottom: 10,
         marginLeft: 12,
-        marginTop:10,
-        fontWeight:'bold'
+        marginTop: 10,
+        fontWeight: 'bold'
 
     },
 
@@ -116,6 +121,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: 'rgba(52, 52, 52,0.4)',
-        
+
     },
 })
