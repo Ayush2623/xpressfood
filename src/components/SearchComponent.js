@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TouchableWithoutFeedback, Modal, TextInput, Fla
 import { colors } from "../global/styles";
 import { Icon } from "react-native-elements";
 import * as Animatable from 'react-native-animatable';
-import { filterData } from "../global/data";
+import { filterData, filterData2 } from "../global/data";
 import { useNavigation } from "@react-navigation/native";
 import filter from 'lodash/filter'
 
@@ -13,7 +13,7 @@ import filter from 'lodash/filter'
 
 export default function ScreenComponent() {
     const navigation = useNavigation();
-    const [data,setData] = useState([...filterData])
+    const [data,setData] = useState([...filterData2])
     const [modalVisible, setModalVisible] = useState(false)
     const [textInputFossued, setTextInputFossued] = useState(true)
     const textInput = useRef(0)
@@ -26,7 +26,7 @@ export default function ScreenComponent() {
     }
     
     const handleSearch = text =>{
-        const dataS = filter(filterData, userSearch =>{
+        const dataS = filter(filterData2, userSearch =>{
             return contains(userSearch,text)
         })
     
