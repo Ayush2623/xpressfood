@@ -9,6 +9,7 @@ import { ClientStack } from "./clientStack";
 
 const ClientTabs = createBottomTabNavigator();
 
+
 export default function RootClientTabs() {
     return (
         <ClientTabs.Navigator

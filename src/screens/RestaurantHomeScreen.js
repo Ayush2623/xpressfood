@@ -1,17 +1,15 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, View, ScrollView, Dimensions, TouchableOpacity, Modal } from 'react-native'
 import RestaurantHeader from '../components/RestaurantHeader';
-import { restaurantsData } from '../global/data';
+import { restaurantsData,menu } from '../global/data';
 import { colors, fonts } from '../global/styles';
 import { Icon } from 'react-native-elements'
 import { TabView, TabBar } from 'react-native-tab-view';
-
-
-
+import MenuScreen from './RestaurantTabs/MenuScreen';
+import MenuProductScreen from './MenuProductScreen';
 
 const SCREEN_WIDTH = Dimensions.get('window').width
 const initialLayout = SCREEN_WIDTH;
-
 const RestaurantHomeScreen = ({ navigation, route }) => {
 
     const { id, restaurant } = route.params
@@ -36,24 +34,19 @@ const RestaurantHomeScreen = ({ navigation, route }) => {
         />
     )
 
-
-
-
     const UpdateRoute1 = () => {
         return (
-            <View>
-
-            </View>
+            <View></View>
         )
     }
 
-    // const menuPressed = () => {
-    //     navigation.navigate("MenuProductScreen")
-    // }
+    const menuPressed = () => {
+        navigation.navigate("MenuProductScreen")
+    }
 
+    
 
-
-
+    
 
     return (
         <View style={styles.container}>
@@ -107,9 +100,9 @@ const RestaurantHomeScreen = ({ navigation, route }) => {
                     />
                 </View>
 
-                {/* {index === 0 &&
+                {index === 0 &&
                     <MenuScreen onPress={menuPressed} />
-                } */}
+                }
 
 
             </ScrollView>
@@ -124,7 +117,6 @@ const RestaurantHomeScreen = ({ navigation, route }) => {
                     </View>
                 </View>
             </TouchableOpacity>
-
         </View>
     )
 }
@@ -135,7 +127,7 @@ const styles = StyleSheet.create({
 
     container: {
         flex: 1,
-        paddingTop: 20
+
     },
 
     view1: {
@@ -207,8 +199,7 @@ const styles = StyleSheet.create({
 
     text6: {
         fontSize: 15,
-        fontWeight: "bold",
-        color: colors.grey1
+        color: colors.grey3
     },
 
     view7: {
@@ -338,14 +329,15 @@ const styles = StyleSheet.create({
         top: 0,
         left: 0,
         right: 0,
-        paddingTop: 25
+        paddingTop: 20
     },
 
     text14: {
         fontWeight: "bold",
         marginLeft: 40,
-        color: colors.black,
-        fontSize: 18
+        color: 'white',
+        fontSize: 20,
+        
     },
 
     view15: {
