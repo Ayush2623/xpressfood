@@ -1,5 +1,6 @@
 apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
+apply plugin: 'com.google.gms.google-services'
 
 import com.android.build.OutputFile
 
@@ -100,6 +101,8 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true  //ADD THIS LINE
+        vectorDrawables.useSupportLibrary = true  //ADD THIS LINE
     }
 
     splits {
@@ -149,7 +152,9 @@ android {
 }
 
 dependencies {
+    implementation platform('com.google.firebase:firebase-bom:31.3.0')
     // The version of react-native is set by the React Native Gradle Plugin
+    implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation("com.facebook.react:react-android")
 
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")

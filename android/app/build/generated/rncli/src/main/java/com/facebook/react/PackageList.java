@@ -13,8 +13,6 @@ import java.util.ArrayList;
 
 // @react-native-community/viewpager
 import com.reactnativecommunity.viewpager.RNCViewPagerPackage;
-// @react-native-firebase/app
-import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
 // react-native-gesture-handler
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 // react-native-pager-view
@@ -73,7 +71,6 @@ public class PackageList {
     return new ArrayList<>(Arrays.<ReactPackage>asList(
       new MainReactPackage(mConfig),
       new RNCViewPagerPackage(),
-      new ReactNativeFirebaseAppPackage(),
       new RNGestureHandlerPackage(),
       new PagerViewPackage(),
       new ReanimatedPackage(),
